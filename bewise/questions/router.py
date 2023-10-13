@@ -10,7 +10,7 @@ questions_router = APIRouter()
       
         
 @questions_router.post("/add", status_code=201)
-def create_resume(body: NumQuestins, db : Session = Depends(get_db)):
+def create_resume(body: NumQuestins, db : Session = Depends(get_db)) -> NumQuestins:
     with db as session:
         with session.begin():
             num = body.num

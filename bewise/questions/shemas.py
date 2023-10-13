@@ -3,7 +3,7 @@ from datetime import datetime
 
 
 class NumQuestins(BaseModel):
-    num: int
+    num: int = 1
 
 
 class Questions(BaseModel):
