@@ -4,7 +4,7 @@ from pydantic_settings import BaseSettings
 class Settings(BaseSettings):
     DB_USER: str = 'test'
     DB_PASSWORD: str = 'test'
-    DB_HOST: str = 'localhost'
+    DB_HOST: str = 'postgres'
     DB_PORT: int = 5432
     DB_NAME: str = 'bewise_ai'
 
