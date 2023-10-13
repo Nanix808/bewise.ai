@@ -11,8 +11,8 @@ RUN pip install poetry
 COPY . .
 
 RUN poetry config virtualenvs.create false \
-    && poetry install 
+    && poetry install --without test
 
 
 # CMD ["poetry", "run", "uvicorn", "bewise.main:app", "--host", "0.0.0.0", "--port", "8000"]
-CMD ["python", "bewise/main.py"]
+CMD ["python", "main.py"]

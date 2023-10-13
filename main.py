@@ -1,11 +1,18 @@
 import uvicorn
 from fastapi import FastAPI
-from questions.router import questions_router
 
-from database import create_db
+from bewise.questions.router import questions_router
+from bewise.database import create_db
 
 app = FastAPI(debug=False)
 app.include_router(questions_router, prefix='/api/questions', tags=['api_v1'])
+
+
+@app.get("/")
+async def read_main():
+    return {"msg": "Hello World"}
+
+
 
 def main():
     # Create table
